@@ -14,6 +14,7 @@ import com.jin.estudomc.domain.Cidade;
 import com.jin.estudomc.domain.Cliente;
 import com.jin.estudomc.domain.Endereco;
 import com.jin.estudomc.domain.Estado;
+import com.jin.estudomc.domain.ItemPedido;
 import com.jin.estudomc.domain.Pagamento;
 import com.jin.estudomc.domain.PagamentoComBoleto;
 import com.jin.estudomc.domain.PagamentoComCartao;
@@ -26,12 +27,16 @@ import com.jin.estudomc.repositories.CidadeRepository;
 import com.jin.estudomc.repositories.ClienteRepository;
 import com.jin.estudomc.repositories.EnderecoRepository;
 import com.jin.estudomc.repositories.EstadoRepository;
+import com.jin.estudomc.repositories.ItemPedidoRepository;
 import com.jin.estudomc.repositories.PagamentoRepository;
 import com.jin.estudomc.repositories.PedidoRepository;
 import com.jin.estudomc.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class EstudomcApplication implements CommandLineRunner {
+	
+	@Autowired
+	private ItemPedidoRepository itemPedidoRepository;
 	
 	@Autowired
 	private PagamentoRepository pagamentoRepository;
@@ -121,6 +126,19 @@ public class EstudomcApplication implements CommandLineRunner {
 		
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
 		pagamentoRepository.saveAll(Arrays.asList(pagto1, pagto2));
+		
+		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
+		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.00, 2, 80.00);
+		ItemPedido ip3 = new ItemPedido(ped2, p2, 100.00, 1, 800.00);
+		
+		ped1.getItens().addAll(Arrays.asList(ip1, ip2));
+		ped2.getItens().addAll(Arrays.asList(ip3));
+		
+		p1.getItens().addAll(Arrays.asList(ip1));
+		p2.getItens().addAll(Arrays.asList(ip3));
+		p3.getItens().addAll(Arrays.asList(ip2));
+		
+		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 		
 	}
 
