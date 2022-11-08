@@ -1,11 +1,37 @@
+# Objetivo geral:
+
+- Leitura e entendimento do diagrama de classes 
+- Leitura e entendimento do diagrama de objetos 
+- Associações 
+  Um para muitos / muitos para um 
+, Um para um 
+, Muitos para muitos comum 
+e Muitos para muitos com classe de associação 
+- Bidirecionais / direcionadas 
+- Conceito independente / dependente 
+- Classe de associação 
+- Herança 
+- Enumerações 
+- Atributos Embedded (ItemPedidoPK) 
+- Coleções ElementCollection (telefones de um cliente)
+
 # Modelo Conceitual
 
 ###  Estrutura de camadas do sistema
 
 ![mvc](https://user-images.githubusercontent.com/101072311/200664937-257765c1-4c76-4828-b0ee-fb01913388d5.png)
 
+### Objetivos específicos: 
+1) Fazer uma implementação padrão do seguinte modelo conceitual:
 
-#### Anotações
+![modeloconceitual](https://user-images.githubusercontent.com/101072311/200668188-8fd77ed7-c684-4bf3-9ac5-654e19a3d36c.png)
+
+### Objetivos (continuação): 
+2) Criar a seguinte instância do modelo conceitual:
+
+![Screenshot_1](https://user-images.githubusercontent.com/101072311/200668174-317f8f2a-6529-4962-bf85-b5ac9cf1bbba.png)
+
+#### Anotações de estudo
 
 - Na camada de controladores REST vai ficar nosso Resource.
 - Por padrão na hora de trabalhar na criação das classes de entidade colocar no pacote domain.
@@ -893,9 +919,13 @@ envio de dados Json em requisições .
 Assim, ao invés de usar @JsonManagedReference/@JsonBackRefence, vamos simplesmente utilizar o
 @JsonIgnore no lado da associação que não deve ser serializada. Para isto faça:
 
- Para cada classe de domínio:
- Apague as anotações @JsonManagedReference existentes
- Troque as anotações @JsonBackRefence por @JsonIgnore
+- Para cada classe de domínio:
+- Apague as anotações @JsonManagedReference existentes
+- Troque as anotações @JsonBackRefence por @JsonIgnore
+
+### Curso Projeto full stack completo! Java Spring Boot no back end e Ionic no front end.
+Seção 1: Implementação do modelo conceitual
+- Prof. Dr. Nelio Alves
 
 ## Ferramentas e Tecnologias usadas nesse repositório 🌐
 <div style="display: inline_block"><br>
