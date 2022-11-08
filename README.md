@@ -938,7 +938,7 @@ Seção 1: Implementação do modelo conceitual
 
 ## Teste o projeto 👁‍🗨
 
-Download do projeto para testar em sua máquina: xxx
+Download do projeto para testar em sua máquina: https://github.com/AugustoMello09/Modelo-conceitual/archive/refs/heads/master.zip
 
 ## Entre em contado 👋
   
